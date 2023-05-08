@@ -1,1 +1,1 @@
-print('hello terminal')
+print('hello test2')
