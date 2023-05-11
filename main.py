@@ -1,21 +1,24 @@
 # using the dictionary to store the cost of each dish
-menu = dict(coke=3.0, hamburger=12.5, pizza=14.0)
+menu = dict(coke=3.0, burger=12.5, pizza=14.0)
 # the program will ask the name of customer, the dish, and the quantity
 name = input("Enter the name of the Customer: ")
 # valid dishes include: hamburger, coke, pizza
-dish = input("Enter the dish: ")
-quantity = input("Enter the dish quantity: ")
-
-customer_list = []
-member_list = []
-
+# dish = input("Enter the dish: ")
 #error handling for valid dish
 while True:
     dish = input("Enter the dish: ")
     if dish in menu:
         break
     else:
-        print("Invalid dish entered. Please enter a valid dish.")
+        print("Invalid dish entered. Please enter a valid dish (coke, burger, pizza).")
+
+
+quantity = input("Enter the dish quantity: ")
+
+customer_list = []
+member_list = []
+
+
 # using append to add new customer to rewards_list
 # enter y to be added to rewards program or n to not join
 if name not in member_list:
