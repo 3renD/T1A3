@@ -7,9 +7,9 @@ member_list = []
 #menu list
 while True:
     print("Welcome to the restaurant ordering system!")
-#     print("Please select an option:")
-#     print("1. Order a meal")
-#     print("2. Display existing customers information")
+    print("Please select an option:")
+    print("1. Order a meal")
+    print("2. Display existing customers information")
 #     print("3. Display existing dishes information")
 #     print("4. Exit the program")
 
@@ -59,3 +59,12 @@ while True:
         print(f'{dish} {str(menu[dish])} (AUD) x {quantity}')
         print("Service fee: " + str(service_fee), "(AUD)")
         print("total cost: " + str(total), "(AUD)")
+
+    elif choice == "2":
+        if len(customer_list) == 0:
+            print("No customers yet.")
+        else:
+            for customer in customer_list:
+                name, dish, quantity, service_fee, total = customer
+                member_status = "Member" if name in member_list else "Not Member"
+                print(f"Name: {name}, Dish: {dish}, Quantity: {quantity}, Service Fee: {service_fee} (AUD), Total Cost: {total} (AUD), Member Status: {member_status}")
