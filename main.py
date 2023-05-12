@@ -68,3 +68,8 @@ while True:
                 name, dish, quantity, service_fee, total = customer
                 member_status = "Member" if name in member_list else "Not Member"
                 print(f"Name: {name}, Dish: {dish}, Quantity: {quantity}, Service Fee: {service_fee} (AUD), Total Cost: {total} (AUD), Member Status: {member_status}")
+
+    elif choice == "3":
+        for dish in menu:
+            price = menu[dish]
+            print(f"{dish}: {price} (AUD)")
