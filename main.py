@@ -2,9 +2,19 @@
 menu = dict(coke=3.0, burger=12.5, pizza=14.0)
 # the program will ask the name of customer, the dish, and the quantity
 name = input("Enter the name of the Customer: ")
-# valid dishes include: hamburger, coke, pizza
-# dish = input("Enter the dish: ")
-#error handling for valid dish
+#lists
+customer_list = []
+member_list = []
+
+#menu list
+# while True:
+#     print("Welcome to the restaurant ordering system!")
+#     print("Please select an option:")
+#     print("1. Order a meal")
+#     print("2. Display existing customers information")
+#     print("3. Display existing dishes information")
+#     print("4. Exit the program")
+#dish + error handling
 while True:
     dish = input("Enter the dish: ")
     if dish in menu:
@@ -13,16 +23,23 @@ while True:
         print("Invalid dish entered. Please enter a valid dish (coke, burger, pizza).")
 
 
-quantity = input("Enter the dish quantity: ")
+# dish quantity + error handling
+while True:
+    try:
+        quantity = int(input("Enter the dish quantity: "))
+        if quantity <= 0:
+            print("Invalid quantity entered. Please enter a valid positive integer.")
+            continue
+        break
+    except ValueError:
+        print("Invalid quantity entered. Please enter a valid positive integer.")
 
-customer_list = []
-member_list = []
 
-
-# using append to add new customer to rewards_list
-# enter y to be added to rewards program or n to not join
+# members in member program will not have a service fee (10% extra $ to customer order)
+# using append to add new customer to member_list
+# enter y to be added to members program or n to not join
 if name not in member_list:
-    member_answer = input("would you like to be in the members program?: ")
+    member_answer = input("would you like to be in the members program? (no service fee will be added): ")
     while member_answer != "y" and member_answer != "n":
         member_answer = input("Please enter correct input (y/n): ")
     if member_answer == "y":
