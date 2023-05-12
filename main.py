@@ -10,8 +10,8 @@ while True:
     print("Please select an option:")
     print("1. Order a meal")
     print("2. Display existing customers information")
-#     print("3. Display existing dishes information")
-#     print("4. Exit the program")
+    print("3. Display existing dishes information")
+    print("4. Exit the program")
 
     choice = input("Enter your choice: ")
 
