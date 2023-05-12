@@ -73,3 +73,11 @@ while True:
         for dish in menu:
             price = menu[dish]
             print(f"{dish}: {price} (AUD)")
+
+    elif choice == "4":
+        break
+
+    else:
+        print("Invalid choice entered. Please enter a valid choice.")
+
+print("Thank you for using our program!")
