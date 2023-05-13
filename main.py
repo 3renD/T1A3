@@ -62,7 +62,7 @@ while True:
 
         # members in member program will not have a service fee (10% extra $ to customer order)
         # using append to add new customer to member_list
-        # enter y to be added to members program or n to not join
+        # enter y to be added to members program or n to not join + error handling
         if name not in member_list:
             member_answer = input("would you like to be in the members program? (y/n): ")
             while member_answer != "y" and member_answer != "n":
@@ -81,26 +81,30 @@ while True:
         print(80 * '-')
         print(f'{dish} {str(menu[dish])} (AUD) x {quantity}')
         print("Service fee: " + str(service_fee), "(AUD)")
-        print("total cost: " + str(total), "(AUD)")
+        print("Total cost: " + str(total), "(AUD)")
         print(80 * '-')
 
         # adding new customer to customer list
         customer_list.append((name, dish, quantity, service_fee, total))
 
+#option 2 callback
     elif choice == "2":
         display_customers_info()
 
+#option 3 code block
     elif choice == "3":
         for dish in menu:
             price = menu[dish]
             print(f"{dish}: {price} (AUD)")
 
+#option 4 callback
     elif choice == "4":
         add_dishes_prices()
 
+#option 5 code block
     elif choice == "5":
         break
-
+#menu option error handle
     else:
         print("Invalid choice entered. Please enter a valid choice.")
 
