@@ -1,3 +1,4 @@
+import sys, random, time, math
 
 # using the dictionary to store the name and cost of each dish
 menu = dict(coke=3.0, burger=12.5, pizza=14.0)
