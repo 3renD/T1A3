@@ -11,7 +11,10 @@ member_list = []
 def add_dishes_prices():
     #you can add/update dishes by typing (dish name): (price). Add/update multiple dishes by seperating them with a comma.
     dishes_prices = input("Enter new dishes and prices separated by commas (e.g chips: 4, wrap: 6): ")
-    menu.update(dict([dish_price.split(": ") for dish_price in dishes_prices.split(", ")]))
+    try:
+        menu.update(dict([dish_price.split(": ") for dish_price in dishes_prices.split(", ")]))
+    except ValueError:
+        print("Invalid input. Please enter the dish name followed by a colon and then the price.")
 
 #code block for option 2
 def display_customers_info():
