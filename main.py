@@ -1,5 +1,7 @@
+
 # using the dictionary to store the cost of each dish
 menu = dict(coke=3.0, burger=12.5, pizza=14.0)
+
 #lists
 customer_list = []
 member_list = []
@@ -10,6 +12,15 @@ def add_dishes_prices():
     for dish_price in dishes_prices_list:
         dish, price = dish_price.split(": ")
         menu[dish] = float(price)
+
+def display_customers_info():
+    if len(customer_list) == 0:
+        print("No customers yet.")
+    else:
+        for customer in customer_list:
+            name, dish, quantity, service_fee, total = customer
+            member_status = "Member" if name in member_list else "Not Member"
+            print(f"Name: {name}, Dish: {dish}, Quantity: {quantity}, Service Fee: {service_fee} (AUD), Total Cost: {total} (AUD), Member Status: {member_status}")
 
 #menu list
 while True:
@@ -25,7 +36,7 @@ while True:
 
     if choice == "1":
         name = input("Enter the name of the Customer: ")
-    #dish + error handling
+        #dish + error handling
         while True:
             dish = input("Enter the dish: ")
             if dish in menu:
@@ -50,7 +61,7 @@ while True:
         # using append to add new customer to member_list
         # enter y to be added to members program or n to not join
         if name not in member_list:
-            member_answer = input("would you like to be in the members program? (no service fee will be added): ")
+            member_answer = input("would you like to be in the members program? (y/n): ")
             while member_answer != "y" and member_answer != "n":
                 member_answer = input("Please enter correct input (y/n): ")
             if member_answer == "y":
@@ -60,6 +71,7 @@ while True:
         # adding 10% fee to customer not in members program and 0% if they are
         service_fee = 0 if name in member_list else line_total * 0.10
         total = line_total + service_fee
+
         # This will display the receipt
         print(80 * '-')
         print("Receipt of Customer: " + name)
@@ -69,14 +81,11 @@ while True:
         print("total cost: " + str(total), "(AUD)")
         print(80 * '-')
 
+        # adding new customer to customer list
+        customer_list.append((name, dish, quantity, service_fee, total))
+
     elif choice == "2":
-        if len(customer_list) == 0:
-            print("No customers yet.")
-        else:
-            for customer in customer_list:
-                name, dish, quantity, service_fee, total = customer
-                member_status = "Member" if name in member_list else "Not Member"
-                print(f"Name: {name}, Dish: {dish}, Quantity: {quantity}, Service Fee: {service_fee} (AUD), Total Cost: {total} (AUD), Member Status: {member_status}")
+        display_customers_info()
 
     elif choice == "3":
         for dish in menu:
