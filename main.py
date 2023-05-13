@@ -4,6 +4,13 @@ menu = dict(coke=3.0, burger=12.5, pizza=14.0)
 customer_list = []
 member_list = []
 
+def add_dishes_prices():
+    dishes_prices = input("Enter dishes and prices separated by commas (e.g chips: 4, wrap: 6): ")
+    dishes_prices_list = dishes_prices.split(", ")
+    for dish_price in dishes_prices_list:
+        dish, price = dish_price.split(": ")
+        menu[dish] = float(price)
+
 #menu list
 while True:
     print("Welcome to the restaurant ordering system!")
@@ -11,7 +18,8 @@ while True:
     print("1. Order a meal")
     print("2. Display existing customers information")
     print("3. Display existing dishes information")
-    print("4. Exit the program")
+    print("4. Add/update dishes and prices")
+    print("5. Exit the program")
 
     choice = input("Enter your choice: ")
 
@@ -75,6 +83,9 @@ while True:
             print(f"{dish}: {price} (AUD)")
 
     elif choice == "4":
+        add_dishes_prices()
+
+    elif choice == "5":
         break
 
     else:
