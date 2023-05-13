@@ -61,12 +61,13 @@ while True:
         service_fee = 0 if name in member_list else line_total * 0.10
         total = line_total + service_fee
         # This will display the receipt
-        print(50 * '*')
+        print(80 * '-')
         print("Receipt of Customer: " + name)
-        print(50 * '*')
+        print(80 * '-')
         print(f'{dish} {str(menu[dish])} (AUD) x {quantity}')
         print("Service fee: " + str(service_fee), "(AUD)")
         print("total cost: " + str(total), "(AUD)")
+        print(80 * '-')
 
     elif choice == "2":
         if len(customer_list) == 0:
