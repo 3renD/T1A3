@@ -1,18 +1,20 @@
 
-# using the dictionary to store the cost of each dish
+# using the dictionary to store the name and cost of each dish
 menu = dict(coke=3.0, burger=12.5, pizza=14.0)
 
 #lists
 customer_list = []
 member_list = []
 
+#code block for option 4
 def add_dishes_prices():
-    dishes_prices = input("Enter dishes and prices separated by commas (e.g chips: 4, wrap: 6): ")
+    dishes_prices = input("Enter new dishes and prices separated by commas (e.g chips: 4, wrap: 6): ")
     dishes_prices_list = dishes_prices.split(", ")
     for dish_price in dishes_prices_list:
         dish, price = dish_price.split(": ")
         menu[dish] = float(price)
 
+#code block for option 2
 def display_customers_info():
     if len(customer_list) == 0:
         print("No customers yet.")
@@ -34,6 +36,7 @@ while True:
 
     choice = input("Enter your choice: ")
 
+#code block for option 1
     if choice == "1":
         name = input("Enter the name of the Customer: ")
         #dish + error handling
