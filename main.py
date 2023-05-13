@@ -9,10 +9,7 @@ member_list = []
 #code block for option 4
 def add_dishes_prices():
     dishes_prices = input("Enter new dishes and prices separated by commas (e.g chips: 4, wrap: 6): ")
-    dishes_prices_list = dishes_prices.split(", ")
-    for dish_price in dishes_prices_list:
-        dish, price = dish_price.split(": ")
-        menu[dish] = float(price)
+    menu.update(dict([dish_price.split(": ") for dish_price in dishes_prices.split(", ")]))
 
 #code block for option 2
 def display_customers_info():
