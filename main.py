@@ -49,7 +49,6 @@ while True:
             else:
                 print("Invalid dish entered. Please enter a valid dish (coke, burger, pizza).")
 
-
         # type in dish quantity + error handling
         while True:
             try:
@@ -60,7 +59,6 @@ while True:
                 break
             except ValueError:
                 print("Invalid quantity entered. Please enter a valid positive integer.")
-
 
         # members in member program will not have a service fee (10% extra $ to customer order)
         # using append to add new customer to member_list

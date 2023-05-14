@@ -15,12 +15,17 @@ This will add to the existing dish menu and customers can now add them to their 
 ### dictionaries and variables
 The app features dictionaries, which is used for the name of the dishes and its prices, and lists, which is used for storing the name of customers.
 ### Loops and conditional control structures
-
+Loops and conditional control structures are utilised heavily on this app due to the user having to loop through the menu and its options. Furthermore, the options from the menu list are directly influnced by other options.
 ### Error handling
-
+Every option from the list and the list itself all have error handling for example when you enter a number less than 1 or more than 5 the app will tell the user it is invalid. another example is when you enter a new dish to add the food menu the format must be correct or the app will ask you to do it properly.
 
 ## Trello screenshots
-
+![Alt text](images/trello1.png)
+![Alt text](images/trello2.png)
+![Alt text](images/trello3.png)
+![Alt text](images/trello4.JPG)
 ## Links
+[Loom presentation part 1](https://www.loom.com/share/60d49dc3ea5644f99912d2a22a75fe92)
+[Loom presentation part 2](https://www.loom.com/share/7e0317e70c11491db9d01e9f45296a86)
 [Trello](https://trello.com/invite/b/zq6Rm090/ATTIfdd06380313bd716259df1adb694910cD5F3BD63/t1a3)
 [Github](https://github.com/3renD/T1A3)
